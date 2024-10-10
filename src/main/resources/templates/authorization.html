@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization</title>
+</head>
+<body>
+<h1>Authorization</h1>
+<h3>Register</h3>
+<form th:action="@{/authorization/register}" method="post" id="register-form">
+    <label for="register-username-input">Логин</label>
+    <input type="text" id="register-username-input" name="username"/>
+    <label for="register-password-input">Пароль</label>
+    <input type="password" id="register-password-input" name="password"/>
+    <input type="submit" value="Register" />
+</form>
+<hr/>
+<h3>Login</h3>
+<form th:action="@{/authorization}" method="post" id="login-form">
+    <label for="username">Логин</label>
+    <input type="text" id="username" name="username" />
+    <label for="password">Пароль</label>
+    <input type="password" id="password" name="password" />
+    <input type="submit" value="Login" />
+</form>
+<hr/>
+<a href="/authorization/logout">Выход</a>
+</body>
+</html>
