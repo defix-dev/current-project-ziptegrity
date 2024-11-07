@@ -1,4 +1,4 @@
-var socket = new SockJS('/services/chat');
+var socket = new SockJS('/services/chat/sockjs');
 var stompClient = Stomp.over(socket);
 const curPath = window.location.pathname;
 const chatId = curPath.substring(curPath.lastIndexOf('/')+1, curPath.length);

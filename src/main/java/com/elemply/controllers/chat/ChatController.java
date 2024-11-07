@@ -8,8 +8,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/services/chat")
 public class ChatController {
-    @GetMapping
-    public String chat(Model model) {
-        return "chat_home";
-    }
+
 }

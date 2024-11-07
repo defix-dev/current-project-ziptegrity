@@ -2,14 +2,17 @@ package com.elemply.services.chat;
 
 
 import com.elemply.database.postgresql.entity.Chat;
+import com.elemply.database.postgresql.entity.ChatMember;
 import com.elemply.database.postgresql.entity.ChatMessage;
-import com.elemply.services.chat.data.ChatDTO;
+import com.elemply.services.chat.data.ChatPreviewDTO;
 import com.elemply.services.chat.data.ChatMessageDTO;
 import com.elemply.services.chat.exceptions.NoAccessForChatException;
 import com.elemply.services.chat.exceptions.NoMessagesException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -49,14 +52,15 @@ public class ChatUtils {
                 message.getSentAt());
     }
 
-    public ChatDTO convertChatToDTO(Chat chat) {
-        ChatDTO chatDTO = new ChatDTO();
+    public ChatPreviewDTO convertChatToDTO(Chat chat) {
+        ChatPreviewDTO chatDTO = new ChatPreviewDTO();
         chatDTO.setChatId(chat.getId());
-        chatDTO.setName(chat.getName());
 
         ChatMessage lastMessage = getLastMessageFromChat(chat);
-        chatDTO.setLastMessage(lastMessage.getMessage());
-        chatDTO.setLastMessageSentAt(lastMessage.getSentAt());
+        chatDTO.setChatMemberUsername(getChatMemberUsername(chat.getMembers()));
+        chatDTO.setMessageOwner(lastMessage.getAccount().getUsername());
+        chatDTO.setMessage(lastMessage.getMessage());
+        chatDTO.setMessageSentAt(lastMessage.getSentAt());
 
         return chatDTO;
     }
@@ -64,5 +68,15 @@ public class ChatUtils {
     private ChatMessage getLastMessageFromChat(Chat chat) throws NoMessagesException {
         return chat.getMessages().stream().max(new ChatMessageDateComparator())
                 .orElseThrow(NoMessagesException::new);
+    }
+
+    public String getChatMemberUsername(Set<ChatMember> members)  {
+        String curUsername = chatAccountService.getCurrentAccount().getUsername();
+        Optional<ChatMember> member = members.stream()
+                .filter(m -> !Objects.equals(m.getAccount().getUsername(), curUsername))
+                .findFirst();
+
+        if(member.isEmpty()) return curUsername;
+        return member.get().getAccount().getUsername();
     }
 }

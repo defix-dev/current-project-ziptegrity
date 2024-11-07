@@ -1,0 +1,264 @@
+@import "../functions/math_functions";
+@import "../functions/font";
+@import "../variables";
+
+$header-bg: white;
+$light-blue: rgba($blue, 0.15);
+$header-shadow: 0 px2Rem(4px) px2Rem(33.5px) px2Rem(-5px) rgba(black, 0.05);
+$header-radius: px2Rem(30px);
+$auth-input-background: rgba(0, 0, 0, 0.05);
+$auth-input-stroke: rgba(0, 0, 0, 0.1);
+$auth-input-stroke--active: rgba(0, 0, 0, 0.25);
+$auth-info-color: rgba(0, 0, 0, 0.5);
+
+.header-container {
+  height: auto;
+  padding: px2Rem(20px);
+  width: 100%;
+  background-color: $header-bg;
+  box-shadow: $header-shadow;
+  border-bottom-left-radius: $header-radius;
+  border-bottom-right-radius: $header-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__up {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__auth-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: px2Rem(12.5px) px2Rem(25px);
+    border: px2Rem(1.5px) solid $blue;
+    border-radius: px2Rem(5px);
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($blue, 0.05);
+    }
+  }
+
+  &__page-name {
+    height: 100%;
+    font-size: px2Rem(24px);
+  }
+
+  &__logo-name {
+    font-size: px2Rem(24px);
+    vertical-align: middle;
+  }
+
+  &__logo-icon {
+    width: px2Rem(22px);
+    height: px2Rem(31px);
+    margin-right: px2Rem(15px);
+  }
+
+  &__more-button {
+    img {
+      vertical-align: middle;
+      width: px2Rem(20px);
+      height: px2Rem(20px);
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: px2Rem(15px);
+    background-color: $light-blue;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    height: 100%;
+    width: px2Rem(45px);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__down {
+    width: 100%;
+    height: px2Rem(45px);
+    margin-top: px2Rem(20px);
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__navigation-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-button {
+    img {
+      width: px2Rem(20px);
+      height: px2Rem(20px);
+      vertical-align: middle;
+      margin-right: px2Rem(10px);
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: $blue;
+    background-color: $light-blue;
+    border-radius: 100px;
+    padding: 0 px2Rem(30px);
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: px2Rem(15px);
+    transition: all 0.1s ease-in-out;
+    border: px2Rem(1px) solid transparent;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      background-color: $blue;
+      color: white;
+    }
+
+    &:hover {
+      transform: scale(0.975);
+    }
+  }
+
+  &__authorization {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 99;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 3s ease-in-out;
+  }
+
+  &__authorization-panel {
+    background-color: white;
+    border-radius: $block-radius;
+    box-shadow: $default-shadow;
+    padding: px2Rem(30px);
+    width: px2Rem(450px);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: px2Rem(30px);
+  }
+
+  &__authorization-up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__authorization-title {
+    font-size: px2Rem(32px);
+    font-weight: 600;
+    color: black;
+    display: flex;
+    align-items: center;
+  }
+
+  &__authorization-method-icon {
+    width: px2Rem(42px);
+    height: px2Rem(42px);
+    vertical-align: middle;
+    margin-right: px2Rem(10px);
+  }
+
+  &__authorization-close-button {
+    img {
+      width: px2Rem(25px);
+      height: px2Rem(25px);
+      vertical-align: middle;
+    }
+  }
+
+  &__authorization-input-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__authorization-input-text {
+    font-size: px2Rem(16px);
+    color: black;
+    margin-bottom: px2Rem(10px);
+  }
+
+  &__authorization-input {
+    all: unset;
+    background-color: $auth-input-background;
+    width: 100%;
+    padding: px2Rem(20px);
+    box-sizing: border-box;
+    font-size: px2Rem(16px);
+    color: black;
+    border-radius: $block-radius / 2;
+    border: px2Rem(1px) solid transparent;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      border-color: $auth-input-stroke;
+    }
+
+    &:focus {
+      border-color: $auth-input-stroke--active;
+    }
+  }
+
+  &__authorization-submit-button {
+    all: unset;
+    width: 100%;
+    background-color: $blue;
+    color: white;
+    padding: px2Rem(25px) 0;
+    border-radius: $block-radius / 2;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.975);
+    }
+  }
+
+  &__authorization-info-text {
+    margin-top: px2Rem(10px);
+    color: $auth-info-color;
+  }
+
+  &__authorization-info-button {
+    color: $blue;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

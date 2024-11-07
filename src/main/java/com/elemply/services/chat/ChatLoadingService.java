@@ -2,7 +2,7 @@ package com.elemply.services.chat;
 
 import com.elemply.database.postgresql.entity.Chat;
 import com.elemply.database.postgresql.entity.ChatMessage;
-import com.elemply.services.chat.data.ChatDTO;
+import com.elemply.services.chat.data.ChatPreviewDTO;
 import com.elemply.services.chat.data.ChatMessageDTO;
 import com.elemply.services.chat.exceptions.ChatDoNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +31,8 @@ public class ChatLoadingService {
         return messages;
     }
 
-    public LinkedList<ChatDTO> loadChats() {
-        LinkedList<ChatDTO> chats = new LinkedList<>();
+    public LinkedList<ChatPreviewDTO> loadChats() {
+        LinkedList<ChatPreviewDTO> chats = new LinkedList<>();
         Set<Chat> curChats = chatUtils.getChatsFromCurrentAccount();
 
         for (Chat chat : curChats)

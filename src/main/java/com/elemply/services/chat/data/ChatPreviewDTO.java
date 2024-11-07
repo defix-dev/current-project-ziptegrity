@@ -11,9 +11,10 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ChatDTO {
-    private String name;
-    private String lastMessage;
-    private LocalDateTime lastMessageSentAt;
+public class ChatPreviewDTO {
+    private String chatMemberUsername;
+    private String messageOwner;
+    private String message;
+    private LocalDateTime messageSentAt;
     private long chatId;
 }

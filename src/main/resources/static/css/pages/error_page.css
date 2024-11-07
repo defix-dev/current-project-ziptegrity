@@ -1,0 +1,32 @@
+.error-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 9.375rem;
+  padding: 3.125rem;
+}
+.error-container__decoration-img {
+  width: auto;
+  height: 25rem;
+  object-fit: cover;
+}
+.error-container__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.25rem;
+}
+.error-container__title {
+  font-size: 2.8125rem;
+  color: black;
+  font-weight: 600;
+}
+.error-container__reason {
+  font-size: 1.40625rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=error_page.css.map */

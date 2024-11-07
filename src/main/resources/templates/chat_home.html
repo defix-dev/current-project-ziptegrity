@@ -3,25 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Chat - Home</title>
+    <link rel="stylesheet" th:href="@{/css/components/header.css}">
+    <link rel="stylesheet" th:href="@{/css/pages/page_options.css}">
+    <link rel="stylesheet" th:href="@{/css/components/navigation.css}">
 </head>
 <body>
-<h1>Chat - Home</h1>
-<div th:if="${#lists.isEmpty(chats)}">
-    <p>No chats available.</p>
-</div>
-<div class="scroll-view" th:each="chat : ${chats}">
-    <div th:id="${chat.chatId}">
-        <span th:text="${chat.name}">NAME</span>
-        <span th:text="${chat.lastMessage}">LAST_MESSAGE</span>
-        <span th:text="${chat.lastMessageSentAt}">SENT_DATE</span>
-        <a th:href="@{|/services/chat/group/${chat.chatId}|}">OPEN</a>
-        <button onclick="alert('DELETED')">DELETE</button>
-        <hr/>
-    </div>
-</div>
-<form method="post" th:action="@{/api/chat/add_chat}">
-    <input type="text" id="chat-username-input" name="username" placeholder="Enter username..."/>
-    <input type="submit" value="Add chat"/>
-</form>
+<div id="app"></div>
+<script th:src="@{/vue-module/dist/chatHome.bundle.js}"></script>
 </body>
 </html>

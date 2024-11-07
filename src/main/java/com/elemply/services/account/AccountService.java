@@ -33,11 +33,9 @@ public class AccountService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<Account> account = Optional.ofNullable(accountRepository.findByUsername(username));
+        Optional<Account> account = Optional.of(accountRepository.findByUsername(username));
 
-        if(account.isEmpty()) {
-            throw new UsernameNotFoundException("User do not found.");
-        }
+        System.out.println(account.get().getUsername());
 
         return account.get();
     }

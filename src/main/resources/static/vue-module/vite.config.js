@@ -17,7 +17,12 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      input: './src/main.js',  // Укажите правильный входной файл JS
+      input: {
+        servicesApp: './src/servicesApp.js'
+      },
+      output: {
+        entryFileNames: "[name].bundle.js"
+      }
     }
   }
 })

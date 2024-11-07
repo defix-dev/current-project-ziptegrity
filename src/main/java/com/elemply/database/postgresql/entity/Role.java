@@ -23,13 +23,14 @@ public class Role implements GrantedAuthority {
     private int id;
 
     @Column(name = "name", nullable = false)
+    private String name;
 
     @Override
     public String getAuthority() {
-        return null;
+        return name;
     }
 
     public static Role getDefaultAccountRole() {
-        return new Role(USER_ROLE_ID);
+        return new Role(USER_ROLE_ID, "USER");
     }
 }

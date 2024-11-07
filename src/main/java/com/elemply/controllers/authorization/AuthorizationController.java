@@ -19,11 +19,6 @@ public class AuthorizationController {
         this.accountService = accountService;
     }
 
-    @GetMapping
-    public String authorization() {
-        return "authorization";
-    }
-
     @PostMapping("/register")
     public ResponseEntity<Void> register(@RequestParam String username,
                                          @RequestParam String password) {

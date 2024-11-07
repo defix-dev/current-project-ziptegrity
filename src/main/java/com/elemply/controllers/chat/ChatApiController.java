@@ -1,7 +1,7 @@
 package com.elemply.controllers.chat;
 
 import com.elemply.services.chat.*;
-import com.elemply.services.chat.data.ChatDTO;
+import com.elemply.services.chat.data.ChatPreviewDTO;
 import com.elemply.services.chat.data.ChatMessageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +32,7 @@ public class ChatApiController {
     }
 
     @GetMapping("get_chats")
-    public ResponseEntity<LinkedList<ChatDTO>> getChats() {
+    public ResponseEntity<LinkedList<ChatPreviewDTO>> getChats() {
         return ResponseEntity.ok(loadingService.loadChats());
     }
 

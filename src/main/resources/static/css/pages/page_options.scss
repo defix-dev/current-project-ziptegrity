@@ -1,0 +1,15 @@
+@import "../functions/font";
+
+$bg: #EDF1F7;
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: $bg;
+  @include connectMonserratFont;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
