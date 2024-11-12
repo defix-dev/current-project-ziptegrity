@@ -214,5 +214,111 @@
 .chat-container__widgets {
   width: 18.75rem;
 }
+.chat-container__finder-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-items: center;
+}
+.chat-container__finder-search-block {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+}
+.chat-container__finder-search-input {
+  all: unset;
+  width: 100%;
+  border-radius: 0.625rem;
+  background-color: #F5F5F5;
+  padding: 1.25rem;
+  color: black;
+  box-sizing: border-box;
+}
+.chat-container__finder-search-button {
+  all: unset;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border: 0.0625rem solid #3763F1;
+  border-radius: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat-container__finder-search-button img {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  vertical-align: middle;
+}
+.chat-container__finder-search-button:hover {
+  cursor: pointer;
+  background-color: rgba(55, 99, 241, 0.05);
+}
+.chat-container__finder-users-default-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 15.625rem;
+  overflow-y: auto;
+  transition: mask-image 0.3s ease;
+  padding: 1.25rem;
+  background-color: rgba(55, 99, 241, 0.05);
+  border-radius: 0.625rem;
+}
+.chat-container__finder-users-default-container::-webkit-scrollbar {
+  display: none;
+}
+.chat-container__finder-users-empty {
+  width: 100%;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+}
+.chat-container__finder-mini-title {
+  color: #3763F1;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.chat-container__finder-search-info {
+  background-color: #3763F1;
+  border-radius: 0.625rem;
+  font-size: 0.6875rem;
+  color: white;
+  padding: 0.625rem;
+  margin-left: 0.625rem;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+.chat-container__finder-user {
+  font-size: 1rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.05);
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-container__finder-user:last-child {
+  border: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.chat-container__finder-user-left {
+  display: flex;
+  gap: 1.875rem;
+}
+.chat-container__finder-user-name {
+  font-weight: 600;
+}
+.chat-container__finder-user-status {
+  color: #3763F1;
+}
+.chat-container__finder-user-open-button img {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  vertical-align: middle;
+}
 
 /*# sourceMappingURL=chat_page.css.map */

@@ -111,55 +111,10 @@
 .header-container__nav-button:hover {
   transform: scale(0.975);
 }
-.header-container__authorization {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 99;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(0px);
-  transition: backdrop-filter 3s ease-in-out;
-}
 .header-container__authorization-panel {
-  background-color: white;
-  border-radius: 1.25rem;
-  box-shadow: 0.25rem 0.25rem 2.09375rem -0.3125rem rgba(0, 0, 0, 0.05);
-  padding: 1.875rem;
-  width: 28.125rem;
-  z-index: 100;
   display: flex;
   flex-direction: column;
   gap: 1.875rem;
-}
-.header-container__authorization-up {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header-container__authorization-title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: black;
-  display: flex;
-  align-items: center;
-}
-.header-container__authorization-method-icon {
-  width: 2.625rem;
-  height: 2.625rem;
-  vertical-align: middle;
-  margin-right: 0.625rem;
-}
-.header-container__authorization-close-button img {
-  width: 1.5625rem;
-  height: 1.5625rem;
-  vertical-align: middle;
 }
 .header-container__authorization-input-layout {
   display: flex;

@@ -11,32 +11,15 @@ const props = defineProps({
 
 const emit = defineEmits(['update:panState']);
 const setPanState = (state) => emit('update:panState', state);
-
-function addBlur() {
-  const authorization = document.querySelector(".header-container__authorization");
-
-  if (authorization) {
-    // Устанавливаем фильтр blur, если он ещё не применён
-    authorization.style.backdropFilter = "blur(15px)";
-  }
-}
-
-function delBlur() {
-  const authorization = document.querySelector(".header-container__authorization");
-
-  if (authorization) {
-    // Убираем фильтр blur
-    authorization.style.backdropFilter = "blur(0px)";
-  }
-}
+const hide = () => setPanState(authPanType.HIDE);
 </script>
 
 <template>
   <div v-if="login">
-    <LoginAuthButtonContent @open="addBlur" @close="delBlur" :closeAction="() => setPanState(authPanType.HIDE)" :registerAction="() => setPanState(authPanType.REGISTER)"/>
+    <LoginAuthButtonContent @hide="hide" :registerAction="() => setPanState(authPanType.REGISTER)"/>
   </div>
   <div v-else>
-    <RegisterAuthButtonContent @open="addBlur" @close="delBlur" :closeAction="() => setPanState(authPanType.HIDE)" :loginAction="() => setPanState(authPanType.LOGIN)"/>
+    <RegisterAuthButtonContent @hide="hide" :loginAction="() => setPanState(authPanType.LOGIN)"/>
   </div>
 </template>
 

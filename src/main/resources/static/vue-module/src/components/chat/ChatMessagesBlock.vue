@@ -1,6 +1,7 @@
 <script setup>
 import ChatMessagesList from "@/components/chat/ChatMessagesList.vue";
 import {onMounted, ref} from "vue";
+import ChatMemberFinderBlock from "@/components/chat/memberFinder/ChatMemberFinderBlock.vue";
 
 const messageProps = ref([]);
 
@@ -25,13 +26,17 @@ onMounted(async () => {
     });
   }
 });
+
+const finderBlockVisible = ref(false);
+const changeFinderBlockVisible = (state) => finderBlockVisible.value = state;
 </script>
 
 <template>
   <div class="chat-container__chats">
     <span class="block-title">Текущие сообщения</span>
     <ChatMessagesList :messagesArray="messageProps"/>
-    <a href="#" class="chat-container__add-chat-button">Добавить чат</a>
+    <a class="chat-container__add-chat-button" @click="changeFinderBlockVisible(true)">Добавить чат</a>
+    <ChatMemberFinderBlock v-if="finderBlockVisible" @hide="changeFinderBlockVisible(false)" />
   </div>
 </template>
 

@@ -141,62 +141,10 @@ $auth-info-color: rgba(0, 0, 0, 0.5);
     }
   }
 
-  &__authorization {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 99;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0px);
-    transition: backdrop-filter 3s ease-in-out;
-  }
-
   &__authorization-panel {
-    background-color: white;
-    border-radius: $block-radius;
-    box-shadow: $default-shadow;
-    padding: px2Rem(30px);
-    width: px2Rem(450px);
-    z-index: 100;
     display: flex;
     flex-direction: column;
     gap: px2Rem(30px);
-  }
-
-  &__authorization-up {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__authorization-title {
-    font-size: px2Rem(32px);
-    font-weight: 600;
-    color: black;
-    display: flex;
-    align-items: center;
-  }
-
-  &__authorization-method-icon {
-    width: px2Rem(42px);
-    height: px2Rem(42px);
-    vertical-align: middle;
-    margin-right: px2Rem(10px);
-  }
-
-  &__authorization-close-button {
-    img {
-      width: px2Rem(25px);
-      height: px2Rem(25px);
-      vertical-align: middle;
-    }
   }
 
   &__authorization-input-layout {

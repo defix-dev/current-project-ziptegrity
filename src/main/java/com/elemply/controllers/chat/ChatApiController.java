@@ -6,10 +6,7 @@ import com.elemply.services.chat.data.ChatMessageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedList;
 
@@ -31,13 +28,13 @@ public class ChatApiController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("get_chats")
+    @GetMapping("/get_chats")
     public ResponseEntity<LinkedList<ChatPreviewDTO>> getChats() {
         return ResponseEntity.ok(loadingService.loadChats());
     }
 
-    @GetMapping("get_messages")
-    public ResponseEntity<LinkedList<ChatMessageDTO>> getMessages(@RequestParam long chatId) {
+    @GetMapping("/get_messages/{chatId}")
+    public ResponseEntity<LinkedList<ChatMessageDTO>> getMessages(@PathVariable long chatId) {
         return ResponseEntity.ok(loadingService.loadMessagesByChatId(chatId));
     }
 }

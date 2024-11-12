@@ -8,6 +8,10 @@ $message-date-color: #BFBFBF;
 $message-underline-color: rgba(black, 0.025);
 $widget-bottom1-color: #F2F2F2;
 $statistics-name-color: rgba(black, 0.5);
+$finder-search-input: #F5F5F5;
+$finder-search-btn-hover: rgba($blue, 0.05);
+$finder-user-status: $blue;
+$finder-user-underline: rgba(0, 0, 0, .05);
 
 .chat-container {
   padding: px2Rem(20px);
@@ -276,5 +280,130 @@ $statistics-name-color: rgba(black, 0.5);
 
   &__widgets {
     width: px2Rem(300px);
+  }
+
+  &__finder-container {
+    display: flex;
+    flex-direction: column;
+    gap: px2Rem(20px);
+    justify-items: center;
+  }
+
+  &__finder-search-block {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: px2Rem(16px);
+  }
+
+  &__finder-search-input {
+    all: unset;
+    width: 100%;
+    border-radius: $block-radius / 2;
+    background-color: $finder-search-input;
+    padding: px2Rem(20px);
+    color: black;
+    box-sizing: border-box;
+  }
+
+  &__finder-search-button {
+    all: unset;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border: px2Rem(1px) solid $blue;
+    border-radius: $block-radius / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: px2Rem(25px);
+      height: px2Rem(25px);
+      vertical-align: middle;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $finder-search-btn-hover;
+    }
+  }
+
+  &__finder-users-default-container {
+    display: flex;
+    flex-direction: column;
+    max-height: px2Rem(250px);
+    overflow-y: auto;
+    transition: mask-image 0.3s ease;
+    padding: px2Rem(20px);
+    background-color: rgba($blue, .05);
+    border-radius: $block-radius / 2;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__finder-users-empty {
+    width: 100%;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__finder-mini-title {
+    color: $blue;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+
+  &__finder-search-info {
+    background-color: $blue;
+    border-radius: px2Rem(10px);
+    font-size: px2Rem(11px);
+    color: white;
+    padding: px2Rem(10px);
+    margin-left: px2Rem(10px);
+    box-sizing: border-box;
+    font-weight: 500;
+  }
+
+  &__finder-user {
+    font-size: px2Rem(16px);
+    padding-bottom: px2Rem(20px);
+    margin-bottom: px2Rem(20px);
+    border: px2Rem(1px) solid $finder-user-underline;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:last-child {
+      border: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__finder-user-left {
+    display: flex;
+    gap: px2Rem(30px);
+  }
+
+  &__finder-user-name {
+    font-weight: 600;
+  }
+
+  &__finder-user-status {
+    color: $finder-user-status;
+  }
+
+  &__finder-user-open-button {
+    img {
+      width: px2Rem(25px);
+      height: px2Rem(25px);
+      vertical-align: middle;
+    }
   }
 }
