@@ -7,8 +7,6 @@ import {authPanType, pageType} from "../router/index.js";
 import AuthButtonContent from "@/components/AuthButtonContent.vue";
 
 const logoPath = "/images/elemply_logo.png";
-const pagePath = ref('');
-const route = useRoute();
 
 let authContentType = ref(authPanType.HIDE);
 
@@ -24,18 +22,8 @@ async function logout() {
   });
 }
 
-function parsePageKey(path) {
-  return path.substring(path.lastIndexOf('/') + 1) || 'none';
-}
-
-pagePath.value = parsePageKey(route.path);
-
-watch(() => route.path, (newPath) => {
-  pagePath.value = parsePageKey(newPath);
-});
-
 const currentPagePath = computed(() => pagePath.value);
-const moreIconPath = "/images/more_icon.png";
+const accountIconPath = "/images/account_icon.png";
 
 const isLogin = ref(false);
 
@@ -47,23 +35,16 @@ onMounted(async () => {
 
 <template>
   <div class="header-container">
-    <div class="header-container__up">
+    <div class="header-container__content">
       <div class="header-container__left">
         <img class="header-container__logo-icon" :src="logoPath" alt="Logo"/>
-        <span class="header-container__logo-name">Elemply</span>
-      </div>
-      <div class="header-container__middle">
-        <span class="header-container__page-name">{{ pageType[pagePath] }}</span>
       </div>
       <div class="header-container__right">
-        <HeaderAuthButton @click="showDefAuthPan" :isLogin="isLogin" v-if="isLogin === false"/>
-        <HeaderAuthButton @click="logout" :isLogin="isLogin" v-if="isLogin === true"/>
-      </div>
-    </div>
-    <div class="header-container__down">
-      <Navigation :pagePath="currentPagePath"/>
-      <div class="header-container__more-button">
-        <img alt="more" :src="moreIconPath"/>
+        <span class="header-container__plan header-button">План</span>
+        <span class="header-container__api header-button">API</span>
+        <a class="header-container__account" @click="showDefAuthPan"><img :src="accountIconPath" alt="account_icon" /></a>
+<!--        <HeaderAuthButton @click="showDefAuthPan" :isLogin="isLogin" v-if="isLogin === false"/>
+        <HeaderAuthButton @click="logout" :isLogin="isLogin" v-if="isLogin === true"/>-->
       </div>
     </div>
     <div v-if="authContentType === authPanType.LOGIN">

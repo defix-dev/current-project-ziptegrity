@@ -1,5 +1,7 @@
-@mixin connectMonserratFont() {
-  font-family: "Montserrat", sans-serif;
+$semi-bold: 600;
+
+@mixin connectFont() {
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;

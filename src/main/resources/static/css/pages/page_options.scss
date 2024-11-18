@@ -1,15 +1,49 @@
 @import "../functions/font";
+@import "../functions/math_functions";
 
-$bg: #EDF1F7;
+$bg: #202020;
 
 html, body {
   padding: 0;
   margin: 0;
   background-color: $bg;
-  @include connectMonserratFont;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../images/bg_image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include connectFont;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.grid-container {
+  margin-top: px2Rem(80px);
+  margin-bottom: px2Rem(80px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: px2Rem(20px);
+  padding-right: px2Rem(20px);
+
+  &__content {
+    max-width: px2Rem(1280px);
+    width: px2Rem(1280px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: px2Rem(50px);
+  }
+
+  &__view {
+    box-sizing: border-box;
+    max-width: px2Rem(1000px);
+    width: px2Rem(1000px);
+  }
 }

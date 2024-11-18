@@ -13,7 +13,7 @@ const iconPath = computed(() => `/images/${props.pagePath}_${isActive.value ? 'e
 </script>
 
 <template>
-  <router-link :to="to" :class="{'header-container__nav-button--active': isActive, 'header-container__nav-button': true}">
+  <router-link :to="to" :class="{'navigation-container__button--active': isActive, 'navigation-container__button': true}">
     <img :src="iconPath" alt="nav-icon" />{{ pageType[pagePath] }}</router-link>
 </template>
 

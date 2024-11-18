@@ -12,18 +12,23 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="authorized">
+  <div>
     <link rel="stylesheet" href="/css/pages/chat_page.css"/>
     <div class="chat-container">
       <ChatMessagesBlock/>
-      <ChatWidgetBlock/>
+      <!--      <ChatWidgetBlock/>-->
 
-      <div class="chat-container__selected-group" style="display: none">
+      <div class="chat-container__selected-group chat-block">
+        <div class="chat-container__selected-group-header chat-block-header">
+          <span class="chat-block-title">Переписка</span>
+        </div>
+        <div class="chat-container__selected-group-content chat-block-content">
 
+        </div>
       </div>
     </div>
   </div>
-  <ErrorBlock v-else reason="Для использования сервиса войдите в аккаунт."/>
+  <!--  <ErrorBlock v-else reason="Для использования сервиса войдите в аккаунт."/>-->
 </template>
 
 <style scoped>

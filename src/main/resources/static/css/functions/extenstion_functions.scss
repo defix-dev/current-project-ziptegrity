@@ -1,0 +1,7 @@
+@import "math_functions";
+
+@mixin quadIcon($width, $height: $width) {
+  width: $width;
+  height: $height;
+  vertical-align: middle;
+}

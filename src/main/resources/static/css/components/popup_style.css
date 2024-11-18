@@ -19,7 +19,7 @@
 
 .popup-menu__content {
   background-color: white;
-  border-radius: 1.25rem;
+  border-radius: 0.9375rem;
   box-shadow: 0.25rem 0.25rem 2.09375rem -0.3125rem rgba(0, 0, 0, 0.05);
   padding: 1.875rem;
   width: auto;

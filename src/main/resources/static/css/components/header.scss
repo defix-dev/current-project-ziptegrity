@@ -1,212 +1,62 @@
 @import "../functions/math_functions";
+@import "../functions/extenstion_functions";
 @import "../functions/font";
 @import "../variables";
 
-$header-bg: white;
-$light-blue: rgba($blue, 0.15);
-$header-shadow: 0 px2Rem(4px) px2Rem(33.5px) px2Rem(-5px) rgba(black, 0.05);
-$header-radius: px2Rem(30px);
-$auth-input-background: rgba(0, 0, 0, 0.05);
-$auth-input-stroke: rgba(0, 0, 0, 0.1);
-$auth-input-stroke--active: rgba(0, 0, 0, 0.25);
-$auth-info-color: rgba(0, 0, 0, 0.5);
+$header-bg-color: #3A3A3A;
+$header-shadow: 0 0 px2Rem(13.5px) px2Rem(-5px) rgba(black, .05);
+$account-bg-color: #515151;
 
 .header-container {
-  height: auto;
-  padding: px2Rem(20px);
   width: 100%;
-  background-color: $header-bg;
-  box-shadow: $header-shadow;
-  border-bottom-left-radius: $header-radius;
-  border-bottom-right-radius: $header-radius;
+  padding: px2Rem(20px);
+  background-color: $header-bg-color;
+  font-size: px2Rem(16px);
+  color: white;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: $header-shadow;
 
-  &__up {
+  &__content {
+    max-width: px2Rem(1280px);
     width: 100%;
-    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   &__left {
+
+  }
+
+  &__right {
     display: flex;
     align-items: center;
+    gap: px2Rem(50px);
   }
 
-  &__auth-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: px2Rem(12.5px) px2Rem(25px);
-    border: px2Rem(1.5px) solid $blue;
-    border-radius: px2Rem(5px);
+  &__account {
+    background-color: $account-bg-color;
+    border-radius: px2Rem(10px);
+    padding: px2Rem(5px);
 
-    &:hover {
-      cursor: pointer;
-      background-color: rgba($blue, 0.05);
-    }
-  }
-
-  &__page-name {
-    height: 100%;
-    font-size: px2Rem(24px);
-  }
-
-  &__logo-name {
-    font-size: px2Rem(24px);
-    vertical-align: middle;
-  }
-
-  &__logo-icon {
-    width: px2Rem(22px);
-    height: px2Rem(31px);
-    margin-right: px2Rem(15px);
-  }
-
-  &__more-button {
     img {
-      vertical-align: middle;
-      width: px2Rem(20px);
-      height: px2Rem(20px);
-    }
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: px2Rem(15px);
-    background-color: $light-blue;
-    border-radius: 50%;
-    aspect-ratio: 1;
-    height: 100%;
-    width: px2Rem(45px);
-
-    &:hover {
-      cursor: pointer;
+      @include quadIcon(px2Rem(25px), px2Rem(25px));
     }
   }
 
-  &__down {
-    width: 100%;
-    height: px2Rem(45px);
-    margin-top: px2Rem(20px);
-    overflow: auto;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__navigation-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  &__nav-button {
-    img {
-      width: px2Rem(20px);
-      height: px2Rem(20px);
-      vertical-align: middle;
-      margin-right: px2Rem(10px);
-    }
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: $blue;
-    background-color: $light-blue;
-    border-radius: 100px;
-    padding: 0 px2Rem(30px);
-    font-weight: 600;
-    text-decoration: none;
-    margin-right: px2Rem(15px);
-    transition: all 0.1s ease-in-out;
-    border: px2Rem(1px) solid transparent;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &--active {
-      background-color: $blue;
-      color: white;
-    }
-
-    &:hover {
-      transform: scale(0.975);
-    }
-  }
-
-  &__authorization-panel {
-    display: flex;
-    flex-direction: column;
-    gap: px2Rem(30px);
-  }
-
-  &__authorization-input-layout {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__authorization-input-text {
-    font-size: px2Rem(16px);
-    color: black;
-    margin-bottom: px2Rem(10px);
-  }
-
-  &__authorization-input {
-    all: unset;
-    background-color: $auth-input-background;
-    width: 100%;
-    padding: px2Rem(20px);
-    box-sizing: border-box;
-    font-size: px2Rem(16px);
-    color: black;
-    border-radius: $block-radius / 2;
-    border: px2Rem(1px) solid transparent;
-    transition: all 0.1s ease-in-out;
-
-    &:hover {
-      border-color: $auth-input-stroke;
-    }
-
-    &:focus {
-      border-color: $auth-input-stroke--active;
-    }
-  }
-
-  &__authorization-submit-button {
-    all: unset;
-    width: 100%;
-    background-color: $blue;
+  .header-button {
     color: white;
-    padding: px2Rem(25px) 0;
-    border-radius: $block-radius / 2;
-    box-sizing: border-box;
-    text-align: center;
-    transition: all 0.1s ease-in-out;
-
-    &:hover {
-      cursor: pointer;
-      transform: scale(0.975);
-    }
-  }
-
-  &__authorization-info-text {
-    margin-top: px2Rem(10px);
-    color: $auth-info-color;
-  }
-
-  &__authorization-info-button {
-    color: $blue;
-    text-decoration: none;
 
     &:hover {
       text-decoration: underline;
+      cursor: pointer;
     }
+  }
+
+  &__logo-icon {
+    width: px2Rem(25px);
+    height: auto;
   }
 }
