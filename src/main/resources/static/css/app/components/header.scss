@@ -1,0 +1,82 @@
+@import "../../functions/math_functions";
+@import "../../functions/extenstion_functions";
+@import "../../functions/font";
+@import "../variables";
+
+.header-container {
+  border-bottom: px2Rem(1px) solid transparent;
+  width: 100%;
+  height: auto;
+  padding: px2Rem(20px) px2Rem(30px);
+  @include textColor;
+  @include dividingLineBorderColor;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__logo-icon {
+    height: px2Rem(30px);
+    width: auto;
+  }
+
+  &__theme-changer {
+    img {
+      @include quadIcon(px2Rem(30px));
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: px2Rem(30px);
+  }
+
+  &__dividing-line {
+    border-left: px2Rem(1px) solid transparent;
+    height: px2Rem(30px);
+    @include dividingLineBorderColor;
+  }
+
+  &__account-register {
+    color: $theme-color;
+    background-color: $blue;
+    padding: px2Rem(8px) px2Rem(16px);
+    border-radius: px2Rem(10px);
+    font-weight: $semi-bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__account-logout {
+    padding: px2Rem(8px) px2Rem(16px);
+    border: px2Rem(1px) solid $blue;
+    border-radius: px2Rem(10px);
+    @include textColor;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__account-login {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

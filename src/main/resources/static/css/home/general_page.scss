@@ -1,0 +1,7 @@
+@import "../functions/math_functions";
+
+.general__container {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  position: relative;
+}

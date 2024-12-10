@@ -1,0 +1,60 @@
+@import "../functions/math_functions";
+
+:root {
+  --theme-color-r: 255;
+  --theme-color-g: 255;
+  --theme-color-b: 255;
+}
+
+.dark-theme {
+  --theme-color-r: 0;
+  --theme-color-g: 0;
+  --theme-color-b: 0;
+}
+
+@mixin invertedColorWithTransparency($transparency: 255) {
+  color: rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), $transparency);
+}
+
+@mixin invertedBackgroundColorWithTransparency($transparency: 255) {
+  background-color: rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), $transparency);
+}
+
+@mixin invertedBorderColorWithTransparency($transparency: 255) {
+  border-color: rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), $transparency);
+}
+
+@mixin colorWithTransparency($transparency: 255) {
+  color: rgba(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b), $transparency);
+}
+
+@mixin backgroundColorWithTransparency($transparency: 255) {
+  background-color: rgba(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b), $transparency);
+}
+
+@mixin borderColorWithTransparency($transparency: 255) {
+  border-color: rgba(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b), $transparency);
+}
+
+//------------------
+
+@mixin dividingLineColor() {
+  @include invertedColorWithTransparency(10%);
+}
+
+@mixin dividingLineBorderColor() {
+  @include invertedBorderColorWithTransparency(10%);
+}
+
+@mixin textColor() {
+  @include invertedColorWithTransparency(90%);
+}
+
+$theme-color: rgb(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b));
+
+$default-shadow: px2Rem(4px) px2Rem(4px) px2Rem(33.5px) px2Rem(-5px) rgba(black, 0.05);
+$block-radius: px2Rem(15px);
+$header-shadow: 0 px2Rem(4px) px2Rem(15px) 0 rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), .1);
+
+$blue: #00A6ED;
+$light-blue: rgba($blue, .10);

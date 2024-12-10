@@ -1,0 +1,20 @@
+.arrow-down {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.15);
+  border-radius: 100%;
+  background-color: #2B2B2B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 0;
+  transform: translateX(calc(50vw - 1.40625rem));
+}
+.arrow-down img {
+  width: 1rem;
+  height: auto;
+}
+
+/*# sourceMappingURL=page.css.map */

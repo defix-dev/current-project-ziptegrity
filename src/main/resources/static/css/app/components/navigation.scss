@@ -1,0 +1,24 @@
+@import "../../functions/math_functions";
+@import "../../functions/extenstion_functions";
+@import "../../functions/font";
+@import "../variables";
+
+.navigation-container {
+  width: 100%;
+  height: auto;
+  border-bottom: px2Rem(1px) solid transparent;
+  padding: px2Rem(15px) px2Rem(30px);
+  display: flex;
+  align-items: center;
+  gap: px2Rem(30px);
+  @include dividingLineBorderColor;
+
+  &__button {
+    text-decoration: none;
+    @include invertedColorWithTransparency(75%);
+  }
+
+  &__button--active {
+    color: $blue;
+  }
+}

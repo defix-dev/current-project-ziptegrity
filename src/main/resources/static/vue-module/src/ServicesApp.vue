@@ -1,17 +1,15 @@
 <template>
-  <link rel="stylesheet" href="/css/components/header.css">
-  <Header/>
-  <div class="grid-container">
-    <div class="grid-container__content">
-      <Navigation :pagePath="pagePath"/>
-      <router-view class="grid-container__view"></router-view>
-    </div>
+  <link rel="stylesheet" href="/css/app/components/header.css">
+  <div class="grid-container" style="height: 100vh; display: grid; grid-template-rows: auto auto 1fr">
+    <Header/>
+    <Navigation :pagePath="pagePath"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script setup>
-import Header from "@/components/Header.vue";
-import Navigation from "@/components/Navigation.vue";
+import Header from "@/components/services/Header.vue";
+import Navigation from "@/components/services/Navigation.vue";
 import {ref, watch} from "vue";
 import {useRoute} from "vue-router";
 

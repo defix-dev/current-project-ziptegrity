@@ -18,7 +18,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        servicesApp: './src/servicesApp.js'
+        servicesApp: './src/servicesApp.js',
+        homeApp: './src/homeApp.js'
       },
       output: {
         entryFileNames: "[name].bundle.js"

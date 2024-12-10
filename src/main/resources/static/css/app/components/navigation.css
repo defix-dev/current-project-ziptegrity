@@ -1,0 +1,31 @@
+:root {
+  --theme-color-r: 255;
+  --theme-color-g: 255;
+  --theme-color-b: 255;
+}
+
+.dark-theme {
+  --theme-color-r: 0;
+  --theme-color-g: 0;
+  --theme-color-b: 0;
+}
+
+.navigation-container {
+  width: 100%;
+  height: auto;
+  border-bottom: 0.0625rem solid transparent;
+  padding: 0.9375rem 1.875rem;
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+  border-color: rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), 10%);
+}
+.navigation-container__button {
+  text-decoration: none;
+  color: rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), 75%);
+}
+.navigation-container__button--active {
+  color: #00A6ED;
+}
+
+/*# sourceMappingURL=navigation.css.map */

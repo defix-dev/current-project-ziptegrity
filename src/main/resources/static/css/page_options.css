@@ -1,0 +1,37 @@
+:root {
+  --theme-color-r: 255;
+  --theme-color-g: 255;
+  --theme-color-b: 255;
+}
+
+.dark-theme {
+  --theme-color-r: 0;
+  --theme-color-g: 0;
+  --theme-color-b: 0;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b));
+  font-size: 16px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: all 0.05s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=page_options.css.map */

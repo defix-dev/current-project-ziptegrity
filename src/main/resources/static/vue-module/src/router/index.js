@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import CurrencyConverterService from "@/components/currencyConverter/CurrencyConverterService.vue";
-import ChatService from "@/components/chat/ChatService.vue";
-import CalculatorService from "@/components/calculator/CalculatorService.vue";
-import WeatherService from "@/components/weather/WeatherService.vue";
+import CurrencyConverterService from "@/components/services/currencyConverter/CurrencyConverterService.vue";
+import ChatService from "@/components/services/chat/ChatService.vue";
+import CalculatorService from "@/components/services/calculator/CalculatorService.vue";
+import WeatherService from "@/components/services/weather/WeatherService.vue";
 
 const routes = [
     { path: '/services/chat', name: 'Chat', component: ChatService },

@@ -1,0 +1,76 @@
+:root {
+  --theme-color-r: 255;
+  --theme-color-g: 255;
+  --theme-color-b: 255;
+}
+
+.dark-theme {
+  --theme-color-r: 0;
+  --theme-color-g: 0;
+  --theme-color-b: 0;
+}
+
+.header-container {
+  border-bottom: 0.0625rem solid transparent;
+  width: 100%;
+  height: auto;
+  padding: 1.25rem 1.875rem;
+  color: rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), 90%);
+  border-color: rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), 10%);
+}
+.header-container__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-container .header-button:hover {
+  cursor: pointer;
+}
+.header-container__logo-icon {
+  height: 1.875rem;
+  width: auto;
+}
+.header-container__theme-changer img {
+  width: 1.875rem;
+  height: 1.875rem;
+  vertical-align: middle;
+}
+.header-container__theme-changer:hover {
+  cursor: pointer;
+}
+.header-container__right {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+}
+.header-container__dividing-line {
+  border-left: 0.0625rem solid transparent;
+  height: 1.875rem;
+  border-color: rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), 10%);
+}
+.header-container__account-register {
+  color: rgb(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b));
+  background-color: #00A6ED;
+  padding: 0.5rem 1rem;
+  border-radius: 0.625rem;
+  font-weight: 600;
+}
+.header-container__account-register:hover {
+  cursor: pointer;
+}
+.header-container__account-logout {
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid #00A6ED;
+  border-radius: 0.625rem;
+  color: rgba(calc(255 - var(--theme-color-r)), calc(255 - var(--theme-color-g)), calc(255 - var(--theme-color-b)), 90%);
+}
+.header-container__account-logout:hover {
+  cursor: pointer;
+}
+.header-container__account-login:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=header.css.map */

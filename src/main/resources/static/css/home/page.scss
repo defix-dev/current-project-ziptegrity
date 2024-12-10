@@ -1,0 +1,29 @@
+@import "../functions/math_functions";
+
+$arrow-bg: #2B2B2B;
+$arrow-stroke: rgba(white, .15);
+$arrow-width: px2Rem(45px);
+
+.page__container {
+  
+}
+
+.arrow-down {
+  width: $arrow-width;
+  height: $arrow-width;
+  border: px2Rem(1px) solid $arrow-stroke;
+  border-radius: 100%;
+  background-color: $arrow-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: px2Rem(20px);
+  left: 0;
+  transform: translateX(calc(50vw - $arrow-width/2));
+
+  img {
+    width: px2Rem(16px);
+    height: auto;
+  }
+}

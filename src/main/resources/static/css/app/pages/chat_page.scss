@@ -1,0 +1,135 @@
+@import "../../functions/math_functions";
+@import "../../functions/extenstion_functions";
+@import "../../functions/font";
+@import "../variables";
+
+.chat-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: px2Rem(400px) 1fr;
+
+  &__chats {
+    border-right: px2Rem(1px) solid;
+    @include dividingLineBorderColor;
+  }
+
+  .chat-block {
+    height: 100%;
+  }
+
+  .header-in-parent {
+    width: 100%;
+    height: px2Rem(75px);
+    display: flex;
+    justify-content: space-between;
+    padding: px2Rem(30px);
+    box-shadow: $header-shadow;
+    font-size: px2Rem(20px);
+    font-weight: 600;
+    align-items: center;
+    @include textColor;
+  }
+
+  .header-parent {
+    overflow: hidden;
+  }
+
+  .header-img {
+    width: px2Rem(35px);
+    height: px2Rem(35px);
+    background-color: $light-blue;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: px2Rem(15px);
+      height: px2Rem(15px);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .empty-block {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .empty-msg {
+    padding: px2Rem(10px) px2Rem(20px);
+    @include invertedBackgroundColorWithTransparency(2.5%);
+    @include invertedColorWithTransparency(50%);
+    border-radius: px2Rem(50px);
+    text-align: center;
+    margin: px2Rem(25px);
+  }
+
+  &__chats-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__selected-group-content {
+    height: 100%;
+  }
+
+  &__message {
+    width: 100%;
+    height: auto;
+    padding: px2Rem(15px);
+    border-bottom: px2Rem(1px) solid;
+    @include dividingLineBorderColor;
+  }
+
+  &__message-inner {
+    padding: px2Rem(15px);
+    border-radius: px2Rem(10px);
+    @include textColor;
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr;
+    align-items: center;
+    gap: px2Rem(10px);
+
+    &:hover {
+      @include invertedBackgroundColorWithTransparency(5%);
+      cursor: pointer;
+    }
+  }
+
+  &__message-username {
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__message-text {
+    @include invertedColorWithTransparency(50%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  &__message-date {
+    @include invertedColorWithTransparency(25%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__chats-count-info {
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+    @include invertedColorWithTransparency(50%);
+    margin: px2Rem(30px) px2Rem(30px) px2Rem(10px);
+  }
+}
