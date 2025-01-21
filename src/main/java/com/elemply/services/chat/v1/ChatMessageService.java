@@ -1,13 +1,10 @@
-package com.elemply.services.chat;
+package com.elemply.services.chat.v1;
 
-import com.elemply.database.postgresql.entity.Account;
 import com.elemply.database.postgresql.entity.ChatMessage;
 import com.elemply.database.postgresql.repositories.ChatMessageRepository;
-import com.elemply.services.account.AccountService;
-import com.elemply.services.chat.exceptions.ChatDoNotFoundException;
-import com.elemply.services.chat.exceptions.MessageDoNotFoundException;
+import com.elemply.services.chat.v1.exceptions.ChatDoNotFoundException;
+import com.elemply.services.chat.v1.exceptions.MessageDoNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

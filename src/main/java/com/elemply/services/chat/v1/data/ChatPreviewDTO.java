@@ -1,4 +1,4 @@
-package com.elemply.services.chat.data;
+package com.elemply.services.chat.v1.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

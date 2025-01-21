@@ -1,8 +1,9 @@
 package com.elemply.controllers.chat;
 
-import com.elemply.services.chat.*;
-import com.elemply.services.chat.data.ChatPreviewDTO;
-import com.elemply.services.chat.data.ChatMessageDTO;
+import com.elemply.services.chat.v1.ChatCreationService;
+import com.elemply.services.chat.v1.ChatLoadingService;
+import com.elemply.services.chat.v1.data.ChatPreviewDTO;
+import com.elemply.services.chat.v1.data.ChatMessageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

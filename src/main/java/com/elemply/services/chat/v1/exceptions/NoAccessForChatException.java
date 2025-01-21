@@ -1,4 +1,4 @@
-package com.elemply.services.chat.exceptions;
+package com.elemply.services.chat.v1.exceptions;
 
 public class NoAccessForChatException extends RuntimeException {
     public NoAccessForChatException() {

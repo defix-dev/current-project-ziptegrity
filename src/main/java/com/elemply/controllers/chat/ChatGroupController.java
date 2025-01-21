@@ -1,8 +1,8 @@
 package com.elemply.controllers.chat;
 
-import com.elemply.services.chat.data.ChatMessageDTO;
-import com.elemply.services.chat.ChatMessageService;
-import com.elemply.services.chat.ChatUtils;
+import com.elemply.services.chat.v1.data.ChatMessageDTO;
+import com.elemply.services.chat.v1.ChatMessageService;
+import com.elemply.services.chat.v1.ChatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;

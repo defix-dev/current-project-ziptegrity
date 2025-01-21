@@ -1,11 +1,11 @@
-package com.elemply.services.chat;
+package com.elemply.services.chat.v1;
 
 import com.elemply.database.postgresql.entity.Account;
 import com.elemply.database.postgresql.entity.Chat;
 import com.elemply.database.postgresql.entity.ChatMember;
 import com.elemply.database.postgresql.entity.ChatMemberId;
 import com.elemply.database.postgresql.repositories.ChatRepository;
-import com.elemply.services.chat.exceptions.ChatAlreadyExistsException;
+import com.elemply.services.chat.v1.exceptions.ChatAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.elemply.services.chat;
+package com.elemply.services.chat.v1;
 
 import com.elemply.database.postgresql.entity.Account;
 import com.elemply.database.postgresql.entity.Chat;

@@ -5,9 +5,7 @@ import com.elemply.database.postgresql.entity.Role;
 import com.elemply.database.postgresql.repositories.AccountRepository;
 import com.elemply.services.account.exceptions.AccountDoNotFoundException;
 import com.elemply.services.account.exceptions.UnauthorizedAccountException;
-import com.elemply.services.chat.ChatAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,7 +13,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.print.DocFlavor;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.Optional;
